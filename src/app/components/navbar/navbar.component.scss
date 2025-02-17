@@ -1,0 +1,126 @@
+.menuDiv {
+  width: 100%; 
+  background-color: #1b4557;
+  top: 0;
+  display: flex;
+  max-width: 100%;
+  align-items: center; 
+  position: relative;
+  
+
+  /* Estilos para pantallas pequeñas */
+  @media (max-width: 912px) {
+    justify-content: flex-start;
+    .logoPag{
+      margin-left: 30%;
+      width: 70%;
+    }
+  }
+}
+
+.logoDiv {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  transition: transform 0.3s ease;
+}
+
+.logoDiv:hover{
+  transform: scale(1.1); 
+  cursor: pointer; 
+}
+
+.logoPag {
+  width: 50%; 
+  height: auto;
+  transition: transform 0.3s ease;
+  border-radius: 45%;
+}
+
+.logoPagText {
+  color: #f9f9f9;
+  font-family: 'Raleway', sans-serif;
+  font-size: 120%;
+  font-weight: bold;
+  width: 50%;
+  margin-top: 10%;
+  cursor: pointer; 
+}
+
+
+:host ::ng-deep .p-menubar {
+  background-color: #1B4557; 
+  border: none;
+  box-shadow: none;
+  width: 100%;
+
+  .p-menuitem-link {
+    text-decoration: none !important; 
+    color: #ffffff !important; 
+  }
+
+  .p-menuitem-icon {
+    color: #ffffff !important;
+  }
+ 
+  .p-menuitem-icon:hover {
+    color: #ffffff !important;
+  }
+
+  .p-menuitem-text {
+    text-decoration: none !important; 
+    color: #ffffff !important; 
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .p-menuitem-link:hover .p-menuitem-text {
+    color: #ffffff!important; 
+  }
+
+  .p-submenu-list {
+    background-color: #1B4557;
+    align-items: center;
+
+  }
+}
+
+.p-button {
+  position: absolute; 
+  left: 1rem; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  display: none; /* Oculto por defecto en pantallas grandes */
+
+  @media (max-width: 912px) {
+    display: block; /* Aparece en pantallas pequeñas */
+  }
+}
+
+:host ::ng-deep .p-tieredmenu {
+  background-color: #ffffff; /* Fondo del menú */
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade sombra */
+}
+
+:host ::ng-deep .p-tieredmenu .p-menuitem-link {
+  color: #225259 !important;
+  text-decoration: none !important;
+  font-weight: bold;
+}
+
+:host ::ng-deep .p-tieredmenu .p-menuitem-icon {
+  color: #225259!important;
+}
+
+:host ::ng-deep .p-tieredmenu .p-menuitem-link:hover {
+  background-color: #ffffff !important; /* Color al pasar el cursor */
+}
+
+:host ::ng-deep .p-tieredmenu .p-menuitem-link:hover .p-menuitem-text {
+  color: #47664f !important; /* Color del texto al hacer hover */
+}
+
+
+
+

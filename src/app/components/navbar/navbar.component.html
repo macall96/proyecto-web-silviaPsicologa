@@ -1,0 +1,23 @@
+<div class="menuDiv">
+  
+  <div class="logoDiv" routerLink="/">
+    <img src="../../../assets/images/logo.png" alt="" class="logoPag">
+    <p class="logoPagText">PSICOLOGÍA    ONLINE </p>
+  </div>
+ 
+  <!-- Logo y botón hamburguesa -->
+  <div class="navbar-header d-flex justify-content-between align-items-center">
+    <button
+      class="p-button p-button-rounded p-button-text d-lg-none"
+      style="color:rgb(228, 224, 219)"
+      (click)="toggleMenu($event)">
+      <i class="pi pi-bars"></i> 
+    </button>
+  </div>
+
+  <!-- Menú para pantallas grandes -->
+  <p-menubar [model]="menuItems" class="p-menubar d-none d-lg-flex"></p-menubar>
+
+  <!-- Menú hamburguesa (pantallas pequeñas) -->
+  <p-tieredMenu #hamburgerMenu [model]="menuItems" [popup]="true"></p-tieredMenu>
+</div>

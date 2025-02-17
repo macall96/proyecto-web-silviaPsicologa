@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;700&display=swap');
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); 
+  }
+}
+
+/* Animación para el hr */
+@keyframes drawLine {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.strong {
+  font-weight: bold;
+  color: #387B5B;
+}
+
+hr {
+  background-color: #1B4557;
+  height: 2px;
+  border: none;
+  margin: 1rem 0;
+  width: 0; /* Comienza sin ancho */
+  opacity: 0; /* Comienza invisible */
+  animation: drawLine 1.5s ease-out 1s forwards; 
+}
+
+.vision-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #D5E4D9; /* Fondo principal */
+  min-height: 100vh;
+  animation: fadeIn 1s ease-out; 
+
+  /* Ajuste para pantallas pequeñas */
+  @media (max-width: 768px) {
+    flex-direction: column-reverse; /* La imagen se coloca encima */
+    text-align: center;
+  }
+}
+
+.text-section {
+  flex: 1;
+  font-family: 'Raleway', sans-serif;
+  color: #333333;
+
+  .vision-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1B4557;
+    margin-bottom: 1rem;
+  }
+
+  .vision-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+  }
+}
+
+.values-link {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #16462f;
+  transition: color 0.3s ease, transform 0.2s ease;
+  font-family: 'Raleway', sans-serif;
+  font-size:130%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    color: #1B4557;
+    transform: scale(1.05);
+    font-size:140%;
+  }
+}
+
+.image-section {
+  flex: 1;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+
+  .vision-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .linkDiv {
+    text-align: center;
+    margin-top: 20%;
+  }
+}
