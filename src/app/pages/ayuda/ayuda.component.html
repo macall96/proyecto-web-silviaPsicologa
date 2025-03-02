@@ -1,19 +1,32 @@
 <div class="ayuda-container">
   <!-- Imagen -->
   <div class="image-section">
-    <img src="../../../assets/images/ayudaImgDef.jpg" alt="Ayuda" class="ayuda-image" />
+    <img 
+      src="./assets/images/ayudaImgDef.jpg" 
+      alt="Ayuda" 
+      class="ayuda-image"
+      (click)="openModal()"
+    />
   </div>
 
   <!-- Texto -->
   <div class="text-section">
-    <p>¿Cómo te sientes al ver esta imagen, te resulta familiar?</p>
-    <p>
+    <p style="font-size:1.3rem;"><strong>¿Cómo te sientes al ver esta imagen, te resulta familiar?</strong></p>
+    <p style="font-size:1.3rem;"><strong>
       ¿Esta forma de sentirte ha estado bastante presente últimamente, a pesar de toda la
       buena intención y voluntad que has puesto para tratar de deshacerte de ella?
-    </p>
+    </strong></p>
     <p>
       Aquí es <strong>PRINCIPALMENTE</strong> donde se centra 
-      <a href="ayuda/gestionEmocional" class="highlighted-link">LA TERAPIA</a>
+      <button (click)="irAGestionEmocional()" class="highlighted-link">LA TERAPIA</button>
     </p>
+  </div>
+</div>
+
+<!-- Modal de Imagen -->
+<div class="modal" *ngIf="isModalOpen" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <span class="close-modal" (click)="closeModal()">&times;</span>
+    <img [src]="modalImageSrc" alt="Imagen ampliada">
   </div>
 </div>

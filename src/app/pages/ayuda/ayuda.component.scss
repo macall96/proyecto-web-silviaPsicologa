@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;700&display=swap');
-
 /* Definición de la animación Fade-In */
 @keyframes fadeIn {
   from {
@@ -40,6 +39,41 @@
   border: 2px solid; 
   border-color: #1B4557;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor de la imagen en el modal */
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+/* Botón de cierre */
+.close-modal {
+  position: absolute;
+  top: 4px;
+  right: 15px;
+  color: #1B4557;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /* Texto */
@@ -61,6 +95,8 @@
 
 .highlighted-link {
   color: #387B5B;
+  background-color: transparent;
+  border: transparent;
   font-weight: bold;
   font-size: 1.3rem;
   text-decoration: none;
@@ -75,15 +111,8 @@
   text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-
 @media (max-width: 768px) {
   .ayuda-image {
-    margin-top: -5%;
     width: 85%;
-    height: auto;
-    border-radius: 10px;
-    border: 2px solid; 
-    border-color: #1B4557;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   }
 }

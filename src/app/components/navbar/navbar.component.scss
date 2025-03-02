@@ -121,6 +121,11 @@
   color: #47664f !important; /* Color del texto al hacer hover */
 }
 
+:host ::ng-deep .p-tieredmenu .p-submenu-list {
+  left: 100% !important;  /* Fuerza el menú a abrirse a la derecha */
+  right: auto !important; /* Asegura que no se abra a la izquierda */
+}
+
 
 
 

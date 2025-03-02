@@ -13,12 +13,18 @@ import { ContactoComponent } from './pages/contacto/contacto-component.component
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'vision', component: VisionComponent },
-  { path: 'vision/valores', component: ValoresComponent },
+  { path: 'valores', component: ValoresComponent },
   { path: 'sobre-mi', component: SobreMiComponent },
-  { path: 'sobre-mi/formacionExp', component: FormacionComponent },
+  { path: 'formacionExp', component: FormacionComponent },
   { path: 'ayuda', component: AyudaComponent },
-  { path: 'ayuda/gestionEmocional', component: GestionEmoComponent},
-  { path: 'ayuda/sintomatologia', component: SintomasComponent},
+  { path: 'gestionEmocional', component: GestionEmoComponent},
+  { path: 'sintomatologia', component: SintomasComponent},
   { path: 'contacto', component: ContactoComponent },
   { path: '**', redirectTo: '' }
 ];
+
+
+
+
+
+
