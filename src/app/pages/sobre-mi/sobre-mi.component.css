@@ -1,0 +1,105 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;700&display=swap");
+/* Animación Fade-In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Animación para el hr */
+@keyframes drawLine {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+.strong {
+  font-weight: bold;
+  color: #387B5B;
+}
+
+hr {
+  background-color: #1B4557;
+  height: 2px;
+  border: none;
+  margin: 1rem 0;
+  width: 0; /* Comienza sin ancho */
+  opacity: 0; /* Comienza invisible */
+  animation: drawLine 1.5s ease-out 1s forwards;
+}
+
+/* Contenedor principal */
+.sobre-mi-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #D5E4D9; /* Fondo suave */
+  min-height: 100vh;
+  animation: fadeIn 1.5s ease-in-out; /* Aplicamos animación fade-in */
+}
+
+/* Contenido principal */
+.sobre-mi-content {
+  display: flex;
+  flex-direction: row; /* Texto e imagen en fila */
+  max-width: 1200px;
+  gap: 2rem;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .sobre-mi-content {
+    flex-direction: column; /* Texto e imagen en columna */
+  }
+}
+
+/* Sección de texto */
+.text-section {
+  flex: 1;
+  font-family: "Raleway", sans-serif;
+  color: #333333;
+  animation: fadeIn 1.5s ease-in-out; /* Animación independiente */
+}
+.text-section .title {
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #1B4557;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+@media (max-width: 768px) {
+  .text-section .title {
+    text-align: center;
+  }
+}
+.text-section .about-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+/* Sección de imagen */
+.image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-in-out; /* Animación independiente */
+}
+.image-section .sobre-mi-image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}/*# sourceMappingURL=sobre-mi.component.css.map */
