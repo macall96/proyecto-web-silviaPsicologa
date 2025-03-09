@@ -206,24 +206,25 @@
   align-items: center;
   font-family: 'Raleway', sans-serif;
   font-weight: bold;
+  width: 100%;
 }
 
 .third-content-wrapper {
-
   color: #ffffff;
   border-radius: 20px;
   padding: 40px;
+  text-align: justify;
+  gap: 5px;
+  word-spacing: 5px;
   margin-top: 20px;
   margin-bottom: 30px;
-  text-align: justify;
-  width: 80%;
+  width: 100%;
   max-width: 1000px;
   padding: 2rem 3rem;
   line-height: 2.8; // Más espaciado entre líneas
   font-style: italic; // Letra en cursiva
   position: relative;
   z-index: 2; // Para que el texto no quede oculto por la imagen
-
 }
 
 .third-content-wrapper::before {
@@ -235,7 +236,6 @@
   width: 100%;
   height: 100%;
   background: url('../../../assets/images/logo.png') no-repeat center center;
-  background-size:cover;
   opacity: 0.1; /* Controla la transparencia de la imagen */
   z-index: -1; /* Envía la imagen detrás del contenido */
 }
@@ -272,6 +272,7 @@
   }
 
   .third-content-wrapper {
-    text-align:initial;
+    text-align: inherit;
+    word-spacing: -6%;
   }
 }
