@@ -26,7 +26,7 @@
 
 hr {
   background-color: #1B4557;
-  height: 2px;
+  height: 0.5px;
   border: none;
   margin: 1rem 0;
   width: 0; /* Comienza sin ancho */
@@ -69,14 +69,14 @@ section {
 }
 
 .icon {
-  width: 80px;
+  width: 70px;
   height: auto;
 }
 
 .section-title {
   font-weight: bold;
   font-family: 'Raleway', sans-serif;
-  font-size: 2.6rem;
+  font-size: 2.2rem;
   color: #1B4557;
   margin-bottom: 1rem;
 }
@@ -122,3 +122,23 @@ section {
     text-align: center; /* Ajusta el texto al centro en pantallas pequeñas */
   }
 }
+
+
+/* Sección de texto */
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  flex: 1;
+  font-family: 'Raleway', sans-serif;
+  color: #333333;
+  animation: fadeIn 1.5s ease-in-out; /* Animación independiente */  }
+
+  .strong-text {
+  font-weight: bold;
+  color: #387B5B;
+}
+
+
