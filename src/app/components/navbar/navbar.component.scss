@@ -70,7 +70,7 @@
   .p-menuitem-text {
     text-decoration: none !important; 
     color: #ffffff !important; 
-    font-size: 1rem;
+    font-size: 0.878rem;
     font-weight: bold;
   }
 
@@ -107,6 +107,7 @@
   color: #225259 !important;
   text-decoration: none !important;
   font-weight: bold;
+  font-size: 0.7rem;
 }
 
 :host ::ng-deep .p-tieredmenu .p-menuitem-icon {

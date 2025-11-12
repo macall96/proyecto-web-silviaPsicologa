@@ -18,7 +18,7 @@ export class NavbarComponent {
   menuItems = [
     { label: 'Inicio', icon: 'pi pi-home', routerLink: '/' },
     {
-      label: 'Mi Visión',
+      label: 'Enfoque y esencia',
       icon: 'pi pi-eye',
       items: [
         { label: 'Reflexión', routerLink: 'vision', icon: 'pi pi-angle-right'},
