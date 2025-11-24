@@ -26,10 +26,10 @@ export class NavbarComponent {
       ]
     },
     {
-      label: 'Sobre Mí',
+      label: 'Sobre mí',
       icon: 'pi pi-user',
       items: [
-        { label: 'Sobre Mí', routerLink: 'sobre-mi', icon: 'pi pi-angle-right'},
+        { label: 'Sobre mí', routerLink: 'sobre-mi', icon: 'pi pi-angle-right'},
         { label: 'Formación y experiencia', routerLink: 'formacionExp',icon: 'pi pi-angle-right'}
       ]
     },

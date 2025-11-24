@@ -64,8 +64,9 @@
 }
 
 .button-group {
+  justify-content: center;
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .rounded-button {
@@ -252,7 +253,7 @@
   .button-group {
     justify-content: center;
     flex-wrap: wrap; 
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .profile-image {
