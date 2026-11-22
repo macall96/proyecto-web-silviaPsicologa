@@ -1,9 +1,35 @@
 <footer class="footer-container">
-    <p class="main-footer">Silvia Hernández Torres. Todos los derechos reservados. ©2025</p>
+  <div class="footer-content">
+    <div class="footer-top">
+      <p class="main-footer">Silvia Hernández Torres. Todos los derechos reservados. ©{{ currentYear }}</p>
+      <nav aria-label="Información legal">
+        <ul class="legal-links">
+          <li><a routerLink="/aviso-legal" target="_blank" rel="noopener" referrerpolicy="same-origin" aria-label="Aviso Legal (se abre en una pestaña nueva)">Aviso Legal</a></li>
+          <li><a routerLink="/politica-de-privacidad" target="_blank" rel="noopener" referrerpolicy="same-origin" aria-label="Política de privacidad (se abre en una pestaña nueva)">Política de privacidad</a></li>
+          <li><a routerLink="/politica-de-cookies" target="_blank" rel="noopener" referrerpolicy="same-origin" aria-label="Política de cookies (se abre en una pestaña nueva)">Política de cookies</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <section class="footer-privacy" lang="es" aria-labelledby="footer-privacy-title">
+      <h2 id="footer-privacy-title">Protección datos</h2>
+      <p>
+        Reglamento Europeo de Protección de Datos 2016/679 y Ley Orgánica 3/2018 de Protección de Datos Personales y garantía de los derechos digitales:
+        <strong>Responsable:</strong> SILVIA HERNÁNDEZ TORRES; AVDA. DE MIGUEL HERNÁNDEZ, 118. 3º 1, - 28018 MADRID (Madrid). E-mail: psicosilviaht&#64;gmail.com;
+        <strong>Finalidad:</strong> Prestar el servicio solicitado y mantener la comunicación necesaria con usted en relación con el mismo;
+        <strong>Legitimación:</strong> En base a una relación contractual (Art.6.1.b) y/o el interesado dio su consentimiento para el tratamiento de sus datos personales para uno o varios fines específicos (Art.6.1.a);
+        <strong>Procedencia:</strong> Del Propio interesado.
+        <strong>Conservación:</strong> Sus datos se conservarán mientras se mantenga la relación o durante los años necesarios para cumplir con las obligaciones legales;
+        <strong>Destinatarios:</strong> Los datos no se cederán salvo que sea necesario para la realización del servicio o por obligación legal;
+        <strong>Derechos:</strong> Puede ejercer dº acceso, rectificación, supresión, limitación, portabilidad, oposición y a presentar una reclamación ante la AEPD. Puede consultar información adicional dirigiéndose a la empresa.
+      </p>
+    </section>
+
     <p class="developer-signature">
       Página web desarrollada por 
-      <a href="https://macall96.github.io/PORTFOLIO-WEB/" target="_blank" style="color: #fff; text-decoration: underline;">
+      <a href="https://macall96.github.io/PORTFOLIO-WEB/" target="_blank" rel="noopener">
         Miguel Ángel de la Calle Cuadra
       </a>
     </p>
-  </footer>
+  </div>
+</footer>

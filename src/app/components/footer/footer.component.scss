@@ -1,26 +1,91 @@
 .footer-container {
-    width: 100%;
-    background-color: #1B4557; /* Fondo oscuro */
-    color: #ffffff; /* Texto blanco */
-    text-align: center;
-    padding: 1rem 0;
-    bottom:0;
-    margin: 0;
-  }
-  
-  .main-footer {
-    margin: 0;
-    font-size: larger;
-    font-weight: bolder;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-    font-size: 100%;
-  }
+  background-color: #1B4557;
+  color: #FFFFFF;
+  padding: 1.25rem 1rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
-  .developer-signature {
-    font-size: 1%; 
-    color: #b0c4de; 
-    margin-top: 5px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-    font-size: 85%;
+.footer-content {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.25rem 1.5rem;
+}
+
+.main-footer {
+  margin: 0;
+  font-weight: bold;
+}
+
+.legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.15rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.legal-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.95rem;
+}
+
+a {
+  color: #FFFFFF;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: #D5E4D9;
+}
+
+a:focus-visible {
+  outline: 2px solid #D5E4D9;
+  outline-offset: 3px;
+}
+
+.footer-privacy {
+  margin-top: 0.75rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.07);
+  overflow-wrap: anywhere;
+}
+
+.footer-privacy h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.footer-privacy p {
+  margin: 0;
+  color: #E4EDF1;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.developer-signature {
+  margin: 1rem 0 0;
+  color: #B0C4DE;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .footer-top, .legal-links {
+    justify-content: center;
+    text-align: center;
   }
-  
+}

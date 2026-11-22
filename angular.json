@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "docs",
+            "outputPath": "dist/portfolio-web-silvia-hernandez",
             "baseHref": "/",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -27,8 +27,7 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/assets",
-               "src/favicoSn.ico"
+              "src/assets"
             ],
             
             "styles": [

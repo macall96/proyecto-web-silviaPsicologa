@@ -1,51 +1,87 @@
 <div class="pedir-cita-container">
-    <h1>Cómo contactar</h1>
-    <div class="steps-container">
-        <!-- Paso 1 -->
-        <div class="step step-1">
-            <div class="content-box">
-                <p class="step-title">Paso 1:</p>
-                <p>Ponte en contacto conmigo a través de: 
-                <div class="contact-info">
-                    <ul>
-                        <div class="contactDiv">
-                            <img src="./assets/images/email-icon.png" alt="Email" style="width: 5%; height: 4%;" />
-                            <p>Email: <a href="mailto:psicosilviaht&#64;gmail.com">psicosilviaht&#64;gmail.com</a></p>
-                        </div>
-                       
-                        <div class="contactDiv">
-                            <img src="./assets/images/whatsapp-icon.png" alt="Email" style="width: 4%; height: 3%;"/>
-                            <p>Whatsapp: <a href="https://wa.me/34613413483"> 613 413 483</a></p>
-                        </div>
+  <h1>Cómo contactar</h1>
 
-                        <div class="contactDiv">
-                            <img src="./assets/images/doctoralia-mktpl-symbol-turquoise.png" alt="Email" style="width: 4%; height: 3%;"/>
-                            <a href="https://www.doctoralia.es/silvia-hernandez-torres-2/psicologo/madrid">Perfil Doctoralia</a>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-        </div>
+  <div class="contact-content">
+    <section class="content-box" aria-labelledby="sesiones-title">
+      <h2 id="sesiones-title">Sobre las sesiones</h2>
+      <p>Las sesiones online se realizan por Google Meet.</p>
+      <ul class="session-details">
+        <li><strong>Duración:</strong> aproximadamente 1 hora.</li>
+        <li><strong>Precio:</strong> 50 € por sesión online. Presencial a consultar.</li>
+        <li><strong>Métodos de pago:</strong> Bizum o transferencia bancaria.</li>
+      </ul>
+    </section>
 
-        <!-- Paso 2 -->
-        <div class="step step-2">
-            <div class="content-box">
-                <p class="step-title">Paso 2:</p>
-                <p>Agendamos una <span class="strong">llamada gratuita de 10-15 minutos</span> para conocer tu situación y si yo soy la persona adecuada para tu caso.</p>
-            </div>
-        </div>
+    <section class="content-box" aria-labelledby="form-title">
+      <h2 id="form-title">Cuéntame cómo puedo ayudarte</h2>
+      <p>Para probar el formulario, puedes rellenarlo con datos ficticios.</p>
+      <p class="field-help">Los campos marcados con * son obligatorios.</p>
 
-        <!-- Paso 3 -->
-        <div class="step step-3">
-            <div class="content-box">
-                <p class="step-title">Paso 3:</p>
-                <p>Si decidimos continuar y empezar la terapia, después de esta llamada se agendará la <span class="strong">primera sesión</span>, la cual tendrá lugar a través de la plataforma <span class="strong">Google Meet</span>.</p>
-                <ul>
-                    <li>Duración: 1 hora (Aproximadamente).</li>
-                    <li>Precio: 40€ por <span class="strong">sesión online.</span> Presencial a consultar.</li>
-                    <li>Métodos de pago: Bizum o transferencia bancaria.</li>
-                </ul>
+      <form #formElement [formGroup]="contactForm" (ngSubmit)="simulateSend(formElement)" (input)="simulationComplete = false" novalidate>
+        <fieldset class="form-fields">
+          <div class="name-fields">
+            <div class="field">
+              <label for="contact-name">Nombre *</label>
+              <input id="contact-name" type="text" formControlName="nombre" autocomplete="given-name" maxlength="80" required
+                [attr.aria-invalid]="submitted && contactForm.controls.nombre.invalid ? 'true' : null">
             </div>
-        </div>
-    </div>
+            <div class="field">
+              <label for="contact-surname">Apellidos *</label>
+              <input id="contact-surname" type="text" formControlName="apellidos" autocomplete="family-name" maxlength="100" required
+                [attr.aria-invalid]="submitted && contactForm.controls.apellidos.invalid ? 'true' : null">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="contact-email">Correo electrónico *</label>
+            <input id="contact-email" type="email" formControlName="email" autocomplete="email" maxlength="254" required
+              [attr.aria-invalid]="submitted && contactForm.controls.email.invalid ? 'true' : null">
+          </div>
+
+          <div class="field">
+            <label for="contact-phone">Teléfono de contacto *</label>
+            <input id="contact-phone" type="tel" formControlName="telefono" autocomplete="tel" maxlength="40" required
+              [attr.aria-invalid]="submitted && contactForm.controls.telefono.invalid ? 'true' : null">
+          </div>
+
+          <div class="field">
+            <label for="contact-availability">¿Qué días y horarios te vienen bien? *</label>
+            <input id="contact-availability" type="text" formControlName="disponibilidad" maxlength="240" required
+              [attr.aria-invalid]="submitted && contactForm.controls.disponibilidad.invalid ? 'true' : null">
+          </div>
+
+          <div class="field">
+            <label for="contact-reason">Motivo de consulta <span class="field-help">(opcional)</span></label>
+            <p id="contact-reason-help" class="field-help">Si te apetece contármelo, me ayudará a hacerme una primera idea de lo que te gustaría trabajar.</p>
+            <textarea id="contact-reason" formControlName="motivo" rows="4" maxlength="3000" aria-describedby="contact-reason-help"></textarea>
+          </div>
+
+          <fieldset class="therapy-options">
+            <legend>¿Has hecho terapia psicológica? *</legend>
+            @for (option of therapyOptions; track option.value) {
+              <label class="radio-option">
+                <input type="radio" formControlName="terapia" [value]="option.value" required
+                  [attr.aria-invalid]="submitted && contactForm.controls.terapia.invalid ? 'true' : null">
+                <span>{{ option.label }}</span>
+              </label>
+            }
+          </fieldset>
+        </fieldset>
+
+        @if (submitted && contactForm.invalid) {
+          <p class="form-message form-error" role="alert">Completa los campos obligatorios y revisa que el correo sea válido.</p>
+        }
+        @if (simulationComplete) {
+          <p class="form-message form-success" role="status">Envío simulado correctamente. Esta demostración no envía correos.</p>
+        }
+
+        <button type="submit" class="rounded-button">Enviar solicitud</button>
+      </form>
+    </section>
+
+    <aside class="content-box doctoralia-note" aria-label="Contacto alternativo">
+      <img src="./assets/images/doctoralia-mktpl-symbol-turquoise.png" alt="" width="28" height="28">
+      <p>También puedes contactar conmigo a través de mi <a href="https://www.doctoralia.es/silvia-hernandez-torres-2/psicologo/madrid">perfil de Doctoralia</a>.</p>
+    </aside>
+  </div>
 </div>

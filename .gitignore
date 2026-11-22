@@ -11,6 +11,9 @@
 npm-debug.log
 yarn-error.log
 
+# Local mail server for the future Hostinger deployment
+/server/
+
 # IDEs and editors
 .idea/
 .project

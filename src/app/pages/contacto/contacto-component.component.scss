@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;700&display=swap');
 
-/* Animación de fade-in */
 @keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -13,113 +13,190 @@
 }
 
 .pedir-cita-container {
-  padding: 2rem;
-  font-family: 'Raleway', sans-serif;
-  background-color: #D5E4D9;
   min-height: 100vh;
-  text-align: center;
-}
-
-h1 {
-  font-size: 3rem;
-  color: #1B4557;
-  margin-bottom: 2rem;
-  font-weight: bold;
-}
-
-.contactDiv {
-  display: flex;
-  flex-direction: row;
-  gap: 1%;
-}
-
-.steps-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.content-box {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: justify;
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 1.2rem;
-  line-height: 1.8;
+  padding: 2rem 1rem 3rem;
+  background-color: #D5E4D9;
+  font-family: 'Raleway', sans-serif;
   color: #333333;
 }
 
-.strong {
-  font-weight: bolder;
-  color: #1B4557;
-}
-
-.step-title {
+h1, h2, label, legend, .session-details strong {
   color: #1B4557;
   font-weight: bold;
-  text-decoration: underline;
-  margin-bottom: 1rem;
-  text-decoration: none;
 }
 
-
-.contact-info li {
-  font-size: 1.1rem;
+h1 {
+  margin: 0 0 2rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  text-align: center;
 }
 
-.contact-info a {
-  color: #387B5B;
-  text-decoration: none;
+h2 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+}
+
+.contact-content {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeIn 0.7s ease-out;
+}
+
+.content-box {
+  min-width: 0;
+  padding: clamp(1rem, 4vw, 2rem);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  line-height: 1.6;
+}
+
+.session-details {
+  margin: 0;
+  padding-inline-start: 1.25rem;
+}
+
+.form-fields, .name-fields {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.name-fields {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.field input, textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #74867D;
+  border-radius: 6px;
+  background: #FFFFFF;
+  color: #333333;
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.field-help {
+  color: #4D6057;
+  font-size: 0.925rem;
+  font-weight: normal;
+}
+
+.field .field-help {
+  margin: 0;
+}
+
+.therapy-options legend {
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 44px;
+  color: #333333;
+  font-weight: normal;
+}
+
+.radio-option input {
+  flex: none;
+  width: 1rem;
+  height: 1rem;
+  accent-color: #387B5B;
+}
+
+input[aria-invalid='true'], textarea[aria-invalid='true'] {
+  border-color: #A33232;
+}
+
+input[type='radio'][aria-invalid='true'] {
+  outline: 1px solid #A33232;
+  outline-offset: 2px;
+}
+
+input:focus-visible, textarea:focus-visible, button:focus-visible, a:focus-visible {
+  outline: 2px solid #1B4557;
+  outline-offset: 2px;
+}
+
+.form-message {
+  margin: 1rem 0 0;
+  color: #1B4557;
   font-weight: bold;
 }
 
-.contact-info a:hover {
-  color: #1B4557;
-  text-decoration: underline;
+.form-error {
+  color: #A33232;
 }
 
-ul {
-  list-style: disc;
-  padding-left: 2rem;
+.form-success {
+  color: #26583F;
 }
 
-ul li {
-  list-style: disc;
-  padding-left: 2rem;
+.rounded-button {
+  min-height: 44px;
+  margin-top: 1.25rem;
+  padding: 0.7rem 2rem;
+  border: 0;
+  border-radius: 50px;
+  background-color: #387B5B;
+  color: #FFFFFF;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Animaciones progresivas */
-.step {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s ease-out forwards;
+.rounded-button:hover {
+  background-color: #1B4557;
 }
 
-.step-1 {
-  animation-delay: 0s;
+.doctoralia-note {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.step-2 {
-  animation-delay: 0.5s;
+.doctoralia-note img {
+  flex: none;
+  object-fit: contain;
 }
 
-.step-3 {
-  animation-delay: 1s;
+.doctoralia-note p {
+  margin: 0;
 }
 
-@media (max-width: 768px) {
-  .content-box {
-    padding: 1.5rem;
+.doctoralia-note a {
+  color: #26583F;
+  font-weight: bold;
+}
+
+@media (max-width: 576px) {
+  .name-fields {
+    grid-template-columns: 1fr;
   }
 
-  h1 {
-    font-size: 2.5rem;
+  .rounded-button {
+    width: 100%;
   }
+}
 
-  ul {
-    padding-left: 1rem;
+@media (prefers-reduced-motion: reduce) {
+  .contact-content {
+    animation: none;
   }
 }
